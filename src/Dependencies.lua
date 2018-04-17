@@ -10,10 +10,14 @@
 
 Class = require 'lib/class'
 push = require 'lib/push'
+Serialize = require 'lib/knife.serialize'
+Timer = require 'lib/knife.timer'
 
 require 'src/constants'
 
 require 'src/Alien'
+require 'src/BossOne'
+require 'src/BossProjectile'
 require 'src/Player'
 require 'src/Projectile'
 require 'src/StateMachine'

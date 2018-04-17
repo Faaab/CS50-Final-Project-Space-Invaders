@@ -1,31 +1,48 @@
 --[[
     GD50
-    Space Invaders Distro
+    Space Invaders – Fabian edition
 
-    Projectile Class
-
-    Author: Colton Ogden
+    Skeleton code for project0 by Colton Ogden
     cogden@cs50.harvard.edu
+    Implementation of project0 and added features by Fabian van Dijk
+    fabiancvandijk@gmail.com
 
-    This class represents the shots fired from either the Player or an Alien. They cause
-    damage to whomever they collide with, be it a Player or an Alien, regardless of who
-    fired (because the mechanics of the game make it impossible for either side to damage
-    their own side). The only difference is the direction specified in the constructor,
-    which sets the velocity to positive or negative depending on which.
+    This class represents the shots fired from either the Player or an Alien. Only
+    projectiles fired by the player can damage aliens, and vice versa.
 ]]
 
 Projectile = Class{}
 
-function Projectile:init(x, y, direction)
-    -- TODO
-    -- direction should be whether the bullet is traveling up or down
+function Projectile:init(x, y, origin)
+    -- set coordinates and whether projectile is moving up or down
+    self.x = x
+    self.y = y
+    self.origin = origin
+    self.inPlay = true
+    self.width = PROJECTILE_WIDTH
+end
+
+function Projectile:collides(target)
+    -- simple AABB collision detection, but 'up' projectiles can only hit aliens, and
+    -- 'down' projectiles can only hit the player
+    if self.x > target.x + target.width or self.x + PROJECTILE_WIDTH < target.x then
+        return false
+    elseif self.y > target.y + target.height or self.y + PROJECTILE_HEIGHT < target.y then
+        return false
+    else
+        return true
+    end
 end
 
 function Projectile:update(dt)
-    -- TODO
+    if self.origin == 'player' then
+        self.y = self.y + -PROJECTILE_SPEED * dt
+    else
+        self.y = self.y + PROJECTILE_SPEED * dt
+    end
 end
 
 function Projectile:render()
-    -- TODO: render logic
-    -- maybe a rectangle is enough?
+    -- render logic
+    love.graphics.rectangle('fill', self.x, self.y, PROJECTILE_WIDTH, PROJECTILE_HEIGHT)
 end
