@@ -16,6 +16,11 @@
     or by colliding with an alien). The original version of the game included shields the
     player could hide behind, but this version of the game doesn't require them.
     ----------
+
+    Works under LÖVE2D 0.10.2
+
+    ----------
+
     To make this into a final project for Harvard's CS50x, I (Fabian) have added several features
     on top of completing project0 as described in https://cs50.github.io/games/projects/0/
 
