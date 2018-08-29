@@ -19,7 +19,7 @@ Original description of project0 by Colton Ogden:
 
 Works under LÖVE2D 0.10.2
 
-To make this into a final project for Harvard's CS50x, I (Fabian) have added several features on top of completing project0 as described in https://cs50.github.io/games/projects/0/
+To make this into a final project for Harvard's CS50x, I have added several features on top of completing project0 as described in https://cs50.github.io/games/projects/0/
 
   1. The major feature added is the boss fight, which repeats every 5th level and becomes gradually
   more difficult. Code can be found in BossOne.lua.
