@@ -9,7 +9,6 @@ Skeleton code for project0 by Colton Ogden
 Implementation of project0 and added features by Fabian van Dijk
   fabiancvandijk@gmail.com
 
-----------
 Original description of project0 by Colton Ogden:
   Space Invaders was an Atari classic released in 1978 by Taito. The game pits
   the player, a lone starship, against hordes of alien creatures that slowly descend
@@ -17,11 +16,8 @@ Original description of project0 by Colton Ogden:
   where each life is the ability to take one point of damage (by either taking a bullet
   or by colliding with an alien). The original version of the game included shields the
   player could hide behind, but this version of the game doesn't require them.
-----------
 
 Works under LÖVE2D 0.10.2
-
-----------
 
 To make this into a final project for Harvard's CS50x, I (Fabian) have added several features on top of completing project0 as described in https://cs50.github.io/games/projects/0/
 
